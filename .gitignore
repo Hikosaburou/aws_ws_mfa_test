@@ -161,6 +161,7 @@ dmypy.json
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*
+**/variables.tf
 
 # .tfstate files
 *.tfstate
