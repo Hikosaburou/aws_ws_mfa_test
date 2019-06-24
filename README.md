@@ -76,7 +76,7 @@ piculet をインストールしていない場合はBundlerを使って以下�
 
 ```
 cd piculet
-bundle install --path vendor/bundle
+bundle install --path=vendor/bundle
 ```
 
 ### Groupfile
