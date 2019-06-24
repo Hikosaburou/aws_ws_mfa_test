@@ -4,3 +4,57 @@
 my_ip = [
     "<YOUR_OFFICE_IP_CIDR>"
 ]
+vpc_local_cidr = [
+    "<YOUR_VPC_CIDR>"
+]
+
+template "rdp_office" do
+end
+
+ec2 "<YOUR_VPC_ID>" do
+  security_group "rdp_office" do
+    description "Allow RDP from office"
+
+    ingress do
+      permission :tcp, 3389..3389 do
+        ip_ranges(
+          *my_ip
+        )
+      end
+    end
+
+    egress do
+      permission :any do
+        ip_ranges(
+          "0.0.0.0/0"
+        )
+      end
+    end
+  end
+
+  security_group "radius" do
+    description "Allow Radius and SSH from local"
+
+    ingress do
+      permission :udp, 1812..1812 do
+        ip_ranges(
+          *vpc_local_cidr
+        )
+      end
+
+      permission :tcp, 22..22 do
+        ip_ranges(
+          *vpc_local_cidr
+        )
+      end
+    end
+
+    egress do
+      permission :any do
+        ip_ranges(
+          "0.0.0.0/0"
+        )
+      end
+    end
+  end
+end

@@ -1,0 +1,39 @@
+variable "prefix" {
+  description = "prefix characters or AWS resource owner"
+  default     = "<YOUR_PREFIX>"
+}
+
+variable "account" {
+  description = "AWS account identifier"
+  default     = "<YOUR_ACCOUNT_NAME>"
+}
+
+variable "vpc_cidr" {
+  description = "VPC CIDR"
+  default     = "x.x.x.x/mm"
+}
+
+variable "subnet_cidr_public_a" {
+  description = "VPC public subnet CIDR (AZ A)"
+  default     = "x.x.x.x/mm"
+}
+
+variable "subnet_cidr_public_c" {
+  description = "VPC public subnet CIDR (AZ C)"
+  default     = "x.x.x.x/mm"
+}
+
+variable "subnet_cidr_private_a" {
+  description = "VPC private subnet CIDR (AZ A)"
+  default     = "x.x.x.x/mm"
+}
+
+variable "subnet_cidr_private_c" {
+  description = "VPC private subnet CIDR (AZ C)"
+  default     = "x.x.x.x/mm"
+}
+
+variable "key_name" {
+  description = "EC2 key pair name"
+  default     = "<YOUR_KEY_PAIR_NAME>"
+}
