@@ -94,6 +94,6 @@ Groupfile内の `my_ip` および `vpc_local_cidr` を適宜修正する
 以下はBundlerでインストールした場合のコマンド
 
 ```
-bundle exec piculet -a -n rdb_office,radius --dry-run
-bundle exec piculet -a -n rdb_office,radius
+bundle exec piculet -a -n rdp_office,radius --dry-run
+bundle exec piculet -a -n rdp_office,radius
 ```
